@@ -1,6 +1,6 @@
 # Minimal Theme
 
-[Demo](https://luptior.github.io/gan_xu.github.io/)
+[Demo](https://luptior.github.io/)
 
 This is the raw HTML and styles that are used for the *minimal* theme on [GitHub Pages](http://pages.github.com/).
 
