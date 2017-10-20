@@ -2,9 +2,7 @@
 
 [Demo](https://luptior.github.io/)
 
-This is the raw HTML and styles that are used for the *minimal* theme on [GitHub Pages](http://pages.github.com/).
-
-Syntax highlighting is provided on GitHub Pages by [Pygments](http://pygments.org).
+This is a personal website based on *minimal* theme on [GitHub Pages](http://pages.github.com/).
 
 # License
 
