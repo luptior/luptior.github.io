@@ -1,6 +1,6 @@
-# Minimal Theme
+#Website
 
-[Demo](https://luptior.github.io/)
+[Website Demo](https://luptior.github.io/)
 
 This is a personal website based on *minimal* theme on [GitHub Pages](http://pages.github.com/).
 
