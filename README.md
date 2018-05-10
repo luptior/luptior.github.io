@@ -1,12 +1,8 @@
-#Website
+# Website
 
-[Website Demo](https://luptior.github.io/)
+Website Demo: [Gan Xu Science](https://ganxu.science)
 
-This is a personal website based on *minimal* theme on [GitHub Pages](http://pages.github.com/).
-
-# License
-
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
+This is a personal website based on *minimal* theme on [minimal](https://github.com/pages-themes/minimal).
 
 
 
