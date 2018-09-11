@@ -11,12 +11,13 @@
     <meta name="author" content="Gan Xu">
     <meta name="keywords" content="Gan, gan, Gan Xu, 徐甘, ganxu, Gan Xu UNC">
     <meta name="description" content="Personal Website for Gan Xu, Graduate Student at Washington University in St. Louis.">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body>
     <div class="wrapper">
 
-      <script src="javascripts/header.js"></script>
+        <div id="header"></div>
       <div class="hidden">
           <a href="#maincontent">Skip to main content</a>
       </div>
@@ -76,8 +77,12 @@
 
       </section>
 
-      <script src="javascripts/footer.js"></script>
+      <div id="footer"></div>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <script>
+        $("#header").load("resources/header.html");
+        $("#footer").load("resources/footer.html");
+    </script>
   </body>
 </html>
