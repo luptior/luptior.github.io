@@ -46,6 +46,9 @@ a {
 
 a:hover {
   color:#069;
+  position:relative;
+  top:2px;
+  left:2px;
 }
 
 a small {
@@ -57,6 +60,9 @@ a small {
 
 a:hover small {
   color:#777;
+  position:relative;
+  top:2px;
+  left:2px;
 }
 
 .wrapper {
@@ -279,7 +285,7 @@ footer {
     border-radius: 50%;
 }
 
-.hidden 
+.hidden
 {position:absolute;
 left:-10000px;
 top:auto;
