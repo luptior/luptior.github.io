@@ -282,7 +282,10 @@ footer {
 }
 
 .img-circle {
-    border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width:150px;
+  height:150px;
 }
 
 .hidden
@@ -296,4 +299,14 @@ overflow:hidden;}
 iframe{
   width: 100%;
   height: 100%;
+}
+
+.container {
+  display: flex;
+}
+.container.space-around {
+  justify-content: space-around;
+}
+.container.space-between {
+  justify-content: space-between;
 }
