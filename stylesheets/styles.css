@@ -310,3 +310,7 @@ iframe{
 .container.space-between {
   justify-content: space-between;
 }
+
+.profile-pic-name{
+  text-align: center;
+}
