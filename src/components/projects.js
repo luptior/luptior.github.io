@@ -1,0 +1,192 @@
+import React from "react";
+
+function Projects() {
+    return(
+        <div class="wrapper">
+            <section>
+
+                <br/>
+                <br/>
+                <h2><a href="index.html"> Back to Main Page </a></h2>
+
+                <h1>Course Projects:</h1>
+
+                <h2>Smart Pet Feeder</h2>
+                <ul>
+                    <li>Sep 2019 - Dec 2019</li>
+                    <li>Language and Tools: C, ESP32, Python, AWS IoT/EC2, Scikit-learn</li>
+                    <li> Designed and prototyped an automated pet food dispenser based on low power programmable wireless
+                        devices.
+                    </li>
+                    <li> Deployed <b>AWS IoT</b> to receive data, send instructions and allow easy scheduling and dispensing of
+                        pet food from cloud.
+                    </li>
+                    <li> Implemented facial recognition with <b>SVM</b> algorithm for pets identification. On RPi 3, the system
+                        is able to train model with limited sized samples
+                        within minutes and distinguish pets identity within <b>1s</b> with on-board CPU with trained model.
+                    </li>
+                    <li> Designed machine learning algorithms combined with IoT sensor to monitor pet feeding habits and detect
+                        abnormal situation.
+                    </li>
+                    <li class="view"><a href="https://github.com/BryanOrabutt/cse521_project"> Project Github Page</a></li>
+                </ul>
+                <br/>
+
+
+                <h2>Multi-Room Chat Server(Web Application)</h2>
+                <ul>
+                    <li>June 2020 - August 2020</li>
+                    <li>Language and Tools: JavaScript, PHP, HTML, CSS, NoSQL, MySQL, Node.js, Angular.js, AJAX</li>
+                    <li> Designed a real-time multi-room chat server using <b>Node.JS</b> and <b>Socket.IO</b>.</li>
+                    <li> Implemented both client-server and chat-server to realize the functions in JavaScript.</li>
+                    <li> Deployed and operated the online application on an <b>AWS EC2</b> Instance to improve the performance
+                        and make good management of the application.
+                    </li>
+
+                </ul>
+                <br/>
+
+                <h2>2D Graphics Canvas</h2>
+                <ul>
+                    <li>September 2017 – December 2017</li>
+                    <li>Language and Tools: C++, libpng, libsdl2, gdb</li>
+                    <li>Implements fundamentals of modern software 2D graphics: geometric primitives, scan conversion, clipping,
+                        transformations, compositing, texture sampling.
+                    </li>
+                    <li>Advanced functions include gradients, antialiasing, filtering, parametric curves, and geometric
+                        stroking.
+                    </li>
+                </ul>
+                <img src="./resources/comp475_pics/composite.png" style="width:100px;height:100px;" alt=“comp475_composite”>
+                <img src="./resources/comp475_pics/tiger.png" style="width:100px;height:100px;" alt=“comp475_tiger”>
+                <img src="./resources/comp475_pics/shader_alpha.png" style="width:250px;height:100px;"
+                    alt=“comp475_shader_alpha”>
+                <br/>
+                <br/>
+                <br/>
+
+                <h2>Mail Client and Server</h2>
+                <ul>
+                    <li>Jan 2017 – Apr 2017</li>
+                    <li>Language: Python</li>
+                    <li>Constructed a mail client and server based on <b>SMTP</b></li>
+                    <li>Used socket programming in building the communication link between client and server</li>
+                </ul>
+
+                <br/>
+                <br/>
+
+                <h1>Research Projects:</h1>
+
+                <h2>Distributed Agent Workflow Scheduling with Distributed Constraint Optimization</h2>
+                <ul>
+                    <li>May 2019 – Nov 2020</li>
+                    <li>Language and Tools: Java, Maven, Kafka, Jenkins, SLF4J</li>
+                    <li> Mapped workflow scheduling problems to be solved by distributed constraint optimization(<b>DCOP</b>).
+                    </li>
+                    <li> Built messaging system for distributed agents to communicate with each other based on <b>Kafka</b>.
+                    </li>
+                    <li> Deployed maximum gain messaging(<b>MGM</b>) algorithm to automatically generate optimal workflow
+                        schedule for multiple agents.
+                    </li>
+                    <li> Created APIs based on the need of other modules in the project to access optimization functions and
+                        results.
+                    </li>
+                    <li> Collaborated with Rayetheon BBN Technologies with DAPRA fund, details available upon approval.</li>
+                </ul>
+                <br/>
+
+
+                <h2>Communication-Aware Distributed Constraint Optimization</h2>
+                <ul>
+                    <li>Mar 2019 to Aug 2020</li>
+                    <li class="view">Advisor: <a href="https://sites.wustl.edu/wyeoh/">Dr. William Yeoh</a></li>
+                    <li>Implementing and extending DPOP algorithm.</li>
+                    <li><i>Communication-Aware Message Optimization for DPOP</i> under review</li>
+                </ul>
+
+                <h2>MinHash on Mercator </h2>
+                <ul>
+                    <li>Oct 2018 - Nov 2018</li>
+                    <li class="view">Advisor: <a href="https://engineering.wustl.edu/Profiles/Pages/Jeremy-Buhler.aspx">Dr.
+                        Jeremy Buhler</a></li>
+                    <li>Implementing a parallel algorithm to get minhash sketches with DNA sequence as input on <a
+                            href="https://github.com/jdbuhler/mercator">Mercator</a>, A framework to implement irregular
+                        streaming applications on NVIDIA GPUs
+                    </li>
+                </ul>
+                <br/>
+
+                <h2>Online Resource Allocation Using Primal-dual Techniques</h2>
+                <ul>
+                    <li>Nov 2018 - Dec 2018</li>
+                    <li class="view">Advisor: <a href="http://chienjuho.com">Dr. Chien-Ju Ho</a></li>
+                    <li>Study online resource allocations problems, such as assigning tasks to workers who arrive online,
+                        assigning kidneys to patients, and assigning passengers to Uber drivers.
+                    </li>
+                    <li>The goal is to maximize the total system utility (e.g., social welfare) subject to various constraints
+                        (e.g., budget constraints, fairness constraints, or assignment constraints.)
+                    </li>
+                </ul>
+                <br/>
+
+                <h2>Clustering Long Read Amplicon Sequencing Data </h3>
+                    <ul>
+                        <li>Oct 2017 - Oct 2018</li>
+                        <li class="view">Advisor: <a href="https://scholar.google.com/citations?user=DPXuHNEAAAAJ&hl=en&oi=ao">Dr.
+                            Jeremy Wang</a></li>
+                        <li>We present a method to identify and partition clusters of unique amplicons from a complex population
+                            of full-length amplicon sequences.
+                        </li>
+                        <li>Paper "Resolution of Complex Amplicon Populations Using Long Read Sequencing" submitted to RECOMB
+                            2019.
+                        </li>
+                        <br/>
+                        <img src="./resources/Research/amplicon_clustering.png" style="width:400px;height:320px;"
+                            alt=“Amplicon”>
+                    </ul>
+                    <br/>
+
+                    <h2>Kmer Based Phylogenetic Modeling</h2>
+                    <ul>
+                        <li>Jan 2017 – Oct 2017</li>
+                        <li class="view">Advisor: <a href="https://scholar.google.com/citations?user=ysE8SHsAAAAJ&hl=en&oi=ao">Dr.
+                            Corbin Jones</a>, <a href="https://scholar.google.com/citations?user=DPXuHNEAAAAJ&hl=en&oi=ao">Dr.
+                            Jeremy Wang</a></li>
+                        <li>Build the accurate phylogenetic model from DNA sequencing data based on kmer without assembly and
+                            alignment
+                        </li>
+                        <li>Successfully generate phylogenetic tree from simulated reference primate and raw DNA sequencing data
+                            of Drosophila
+                        </li>
+                        <li class="view"><a href="https://github.com/luptior/phylogenetic_tree"> PhylgTree Github Page</a></li>
+                    </ul>
+                    <img src="./resources/Research/Drosophila_3batch_dthres_unique.newick.png" style="width:400px;height:300px;"
+                        alt=“Drosophila”>
+                    <br/>
+                    <br/>
+
+                    <h1>For-fun Projects</h1>
+                        <h2>Pysbatch</h2>
+                            <ul>
+                                <li>Aug 2017 to Dec 2017</li>
+                                <li>Implemented a python library wrapping UNIX/Linux system calls and <b>SLURM</b> command. The library
+                                    enable users to set up complicated pipeline workflow using only python functions and avoid Shell
+                                    script.
+                                </li>
+                                <li>Provide simplified options for user to set job dependency relations and limit concurrent jobs by
+                                    pre-set user quota.
+                                </li>
+                                <li>Packaged and released on PyPI and conda-forge platforms, downloaded over <b>2000</b> times.</li>
+                                <li class="view"><a href="https://github.com/luptior/pysbatch"> Pysbatch Github Page</a></li>
+                                <li>use <code>pip install pysbatch</code> to install</li>
+                                <li>or use <code>conda install -c conda-forge pysbatch</code> to install</li>
+                            </ul>
+                        <br/>
+                    <br/>
+            </section>
+        </div>
+    );
+}
+
+export default Projects;
