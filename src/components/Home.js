@@ -1,10 +1,20 @@
 import React from "react";
 
+const meta = {
+    title: 'Gan Xu\'s Personal Website Courses',
+    description: 'I am a description, and I can create multiple tags',
+    meta: {
+        charset: 'utf-8',
+        name: {
+            keywords: 'react,meta,document,html,tags'
+        },
+        viewport: 'width=device-width, initial-scale=1'
+    }
+}
+
 function Home() {
     return(
-
         <div class="wrapper">
-
             <div class="hidden">
                 <a href="#maincontent">Skip to main content</a>
             </div>
@@ -15,7 +25,7 @@ function Home() {
                 <br/>
                 <br/>
 
-                <img src="resources/glacier.jpg"></img>
+                <img src="resources/glacier.jpg" alt="glacier"></img>
                 <br/>
                 <br/>
                 <br/>
