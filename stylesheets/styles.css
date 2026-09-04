@@ -15,7 +15,7 @@ p, ul, ol, table, pre, dl {
   margin:0 0 20px;
 }
 
-info {
+.info {
   font-size:12px;
   margin:0 0 1px;
 }
@@ -46,9 +46,11 @@ a {
 
 a:hover {
   color:#069;
-  position:relative;
-  top:2px;
-  left:2px;
+}
+
+a:focus-visible {
+  outline:2px solid #069;
+  outline-offset:2px;
 }
 
 a small {
@@ -60,9 +62,6 @@ a small {
 
 a:hover small {
   color:#777;
-  position:relative;
-  top:2px;
-  left:2px;
 }
 
 .wrapper {
@@ -295,6 +294,18 @@ top:auto;
 width:1px;
 height:1px;
 overflow:hidden;}
+
+.hidden a:focus {
+  position:fixed;
+  left:8px;
+  top:8px;
+  width:auto;
+  height:auto;
+  padding:8px 12px;
+  background:#fff;
+  border:2px solid #069;
+  z-index:1000;
+}
 
 iframe{
   width: 100%;

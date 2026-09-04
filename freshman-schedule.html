@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mock course selection worksheet for Spring 2026 - CSE 5406, CSE 5309, CSE 5505. Demo page, not affiliated with WashU WebSTAC.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Course Selection - Spring 2026</title>
+  <link rel="icon" href="resources/icon.jpg">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f2f2;
+    }
+
+    .page {
+      max-width: 1024px;
+      width: 100%;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-left: 1px solid #999;
+      border-right: 1px solid #999;
+      box-sizing: border-box;
+      padding: 16px 20px 40px 20px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 0 0 8px 0;
+      color: #660000;
+      font-weight: normal;
+    }
+
+    h2.section-title {
+      font-size: 18px;
+      margin: 24px 0 6px 0;
+      color: #660000;
+      font-weight: normal;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .student-link {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .student-link a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    .student-link a:hover {
+      text-decoration: underline;
+    }
+
+    .top-links {
+      text-align: right;
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+
+    .top-links a {
+      color: #003366;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    .top-links a:hover {
+      text-decoration: underline;
+    }
+
+    .small-label {
+      font-size: 11px;
+      color: #333;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 12px;
+    }
+
+    th, td {
+      border: 1px solid #cccccc;
+      padding: 4px 6px;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #eee;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .table-header-row {
+      background-color: #eee;
+    }
+
+    .sample-row td {
+      background-color: #fafafa;
+    }
+
+    .action-col {
+      width: 70px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .units-col {
+      width: 40px;
+      text-align: center;
+    }
+
+    .seats-col {
+      width: 40px;
+      text-align: center;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    .note-input {
+      width: 98%;
+      border: 1px solid #ccc;
+      height: 18px;
+      box-sizing: border-box;
+    }
+
+    .button-bar {
+      text-align: right;
+      margin-top: 6px;
+      margin-bottom: 4px;
+      font-size: 11px;
+    }
+
+    .button-bar button {
+      margin-left: 4px;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    .schedule-grid {
+      margin-top: 10px;
+    }
+
+    .schedule-grid th {
+      text-align: center;
+    }
+
+    .schedule-time-col {
+      width: 60px;
+      text-align: right;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 11px;
+      border-top: 1px solid #999;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      width: 32%;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 4px 0;
+      font-size: 11px;
+      font-weight: bold;
+      color: #660000;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #003366;
+      text-decoration: none;
+      margin: 1px 0;
+    }
+
+    .footer-column a:hover {
+      text-decoration: underline;
+    }
+
+    .checkbox-inline {
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .legend {
+      font-size: 11px;
+      margin-top: 4px;
+      color: #555;
+    }
+
+    .icon-cell {
+      text-align: center;
+      font-size: 11px;
+    }
+
+    .icon-box {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #666;
+      margin: 0 1px;
+      background: linear-gradient(#dfeadf, #b0c4b0);
+    }
+
+    .icon-x {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #666;
+      margin: 0 1px;
+      background: #f2dede;
+      position: relative;
+    }
+
+    .icon-x:before,
+    .icon-x:after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      width: 2px;
+      height: 10px;
+      background-color: #990000;
+    }
+
+    .icon-x:before {
+      transform: rotate(45deg);
+    }
+
+    .icon-x:after {
+      transform: rotate(-45deg);
+    }
+
+    .icon-pencil {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 1px solid #999;
+      background: #fff8dc;
+      transform: rotate(45deg);
+    }
+
+    .session-filter {
+      margin-top: 4px;
+      font-size: 11px;
+      text-align: right;
+    }
+
+    .session-filter select {
+      font-size: 11px;
+    }
+
+    .question-mark {
+      font-weight: bold;
+      color: #555;
+      margin-left: 4px;
+    }
+
+    .back-link {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .back-link a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 1050px) {
+      .page {
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .page {
+        padding: 12px 10px 24px 10px;
+      }
+      .header-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .top-links {
+        text-align: left;
+      }
+      .top-links a {
+        margin-left: 0;
+        margin-right: 10px;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-column {
+        width: 100%;
+      }
+      table {
+        min-width: 520px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="back-link"><a href="index.html">← Back to ganxu.science</a></div>
+    <div class="header-row">
+      <div class="student-link">
+        <a href="#" aria-label="Student profile">Xu, Gan</a>
+      </div>
+      <div class="top-links">
+        <a href="#">Dashboard</a>
+        <a href="#">Start Page</a>
+        <a href="#">WU Course Listings</a>
+        <a href="#">Section and subsection for ...</a>
+      </div>
+    </div>
+
+    <h1>Course Selection - Spring 2026</h1>
+    <p style="font-size:11px;color:#666;margin:0 0 8px 0;">Demo / mock layout — not affiliated with WashU WebSTAC.</p>
+
+    <div class="table-wrapper"><table>
+      <tr class="table-header-row">
+        <th style="width: 120px;">Dept Code</th>
+        <th style="width: 80px;">Course</th>
+        <th style="width: 60px;">Section</th>
+        <th style="width: 80px;">Subsection</th>
+        <th>My Note</th>
+        <th style="width: 180px;" class="center">Add to Worksheet</th>
+      </tr>
+      <tr class="sample-row">
+        <td>Sample: L24</td>
+        <td>131</td>
+        <td>01</td>
+        <td>A</td>
+        <td><input class="note-input" type="text" aria-label="My Note"></td>
+        <td class="center">
+          <button type="button">1st Choice</button>
+          <button type="button">2nd Choice</button>
+        </td>
+      </tr>
+    </table></div>
+
+    <div class="session-filter">
+      <span class="small-label">Session Filter:</span>
+      <select>
+        <option>Any Session</option>
+      </select>
+    </div>
+
+    <h2 class="section-title">First Choices - Spring 2026<span class="question-mark">?</span></h2>
+
+    <div class="table-wrapper"><table>
+      <tr class="table-header-row">
+        <th style="width: 90px;">Action</th>
+        <th style="width: 140px;">Course/Session</th>
+        <th class="units-col">Units</th>
+        <th>Title</th>
+        <th style="width: 170px;">Days/Times</th>
+        <th style="width: 120px;">Instructor</th>
+        <th class="seats-col">Seats Left</th>
+        <th style="width: 90px;">My Note</th>
+      </tr>
+      <tr>
+        <td class="icon-cell">
+          <span class="icon-box" aria-label="edit" role="img"></span>
+          <span class="icon-x" aria-label="remove" role="img"></span>
+        </td>
+        <td><a href="#">CSE 5406</a></td>
+        <td class="center">3.0</td>
+        <td>Computational Geometry</td>
+        <td>Mon/Wed, 10:00AM - 11:20AM</td>
+        <td>Ju, Tao</td>
+        <td class="center">9</td>
+        <td class="center"><span class="icon-pencil" aria-label="note" role="img"></span></td>
+      </tr>
+      <tr>
+        <td class="icon-cell">
+          <span class="icon-box" aria-label="edit" role="img"></span>
+          <span class="icon-x" aria-label="remove" role="img"></span>
+        </td>
+        <td><a href="#">CSE 5309</a></td>
+        <td class="center">3.0</td>
+        <td>Algorithms and Data Structures</td>
+        <td>Tue/Thu, 10:00AM - 11:20AM</td>
+        <td>Jacobs, Nathan</td>
+        <td class="center">12</td>
+        <td class="center"><span class="icon-pencil" aria-label="note" role="img"></span></td>
+      </tr>
+      <tr>
+        <td class="icon-cell">
+          <span class="icon-box" aria-label="edit" role="img"></span>
+          <span class="icon-x" aria-label="remove" role="img"></span>
+        </td>
+        <td><a href="#">CSE 5505</a></td>
+        <td class="center">3.0</td>
+        <td>Machine Learning Systems</td>
+        <td>Tue/Thu, 1:30PM - 2:50PM</td>
+        <td>Lee, Angelina</td>
+        <td class="center">7</td>
+        <td class="center"><span class="icon-pencil" aria-label="note" role="img"></span></td>
+      </tr>
+    </table></div>
+
+    <div class="button-bar">
+      <span class="small-label">Update Worksheet:</span>
+      <button type="button">Save</button>
+      <button type="button">Reset</button>
+    </div>
+
+    <h2 class="section-title">Second Choices - Spring 2026</h2>
+
+    <div class="table-wrapper"><table>
+      <tr class="table-header-row">
+        <th style="width: 90px;">Action</th>
+        <th style="width: 140px;">Course/Session</th>
+        <th class="units-col">Units</th>
+        <th>Title</th>
+        <th style="width: 170px;">Days/Times</th>
+        <th style="width: 120px;">Instructor</th>
+        <th class="seats-col">Seats Left</th>
+        <th style="width: 90px;">My Note</th>
+      </tr>
+      <!-- No second-choice courses selected -->
+    </table></div>
+
+    <div class="checkbox-inline">
+      <label>
+        <input type="checkbox"> Include Second Choices
+      </label>
+    </div>
+
+    <h2 class="section-title">Registered Courses - Spring 2026</h2>
+
+    <div class="table-wrapper"><table class="schedule-grid">
+      <tr class="table-header-row">
+        <th class="schedule-time-col">Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+      </tr>
+      <tr>
+        <td class="schedule-time-col">10:00 AM</td>
+        <td><a href="#">CSE 5406</a></td>
+        <td></td>
+        <td><a href="#">CSE 5406</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="schedule-time-col">10:30 AM</td>
+        <td><a href="#">CSE 5406</a></td>
+        <td><a href="#">CSE 5309</a></td>
+        <td><a href="#">CSE 5406</a></td>
+        <td><a href="#">CSE 5309</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="schedule-time-col">1:30 PM</td>
+        <td></td>
+        <td><a href="#">CSE 5505</a></td>
+        <td></td>
+        <td><a href="#">CSE 5505</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table></div>
+
+    <div class="footer">
+      <div class="footer-column">
+        <h3>Academics</h3>
+        <a href="#">Bulletins</a>
+        <a href="#">Departments</a>
+        <a href="#">Programs</a>
+      </div>
+      <div class="footer-column">
+        <h3>Who, What, When, Where</h3>
+        <a href="#">Office of the University Registrar</a>
+        <a href="#">Calendars</a>
+        <a href="#">Final Exam Schedule</a>
+      </div>
+      <div class="footer-column">
+        <h3>Help</h3>
+        <a href="#">Student Technology Services</a>
+        <a href="#">WUSTL Key Help</a>
+        <a href="#">Complaint/Feedback Form</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
